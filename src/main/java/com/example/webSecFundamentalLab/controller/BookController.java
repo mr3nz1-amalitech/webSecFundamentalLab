@@ -38,10 +38,13 @@ public class BookController {
 
             return new ResponseEntity<>(HtmlUtils.htmlEscape("Created > , < , <body></body>, * /  "), HttpStatus.CREATED);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>("Error: " + "internal server error", HttpStatus.BAD_REQUEST);
         }
+    }
 
+    @GetMapping({"", "/"})
+    public ResponseEntity<String> getBook() {
+        return new ResponseEntity<>("Checking Semgrep rules", HttpStatus.OK);
     }
 }
-
-
