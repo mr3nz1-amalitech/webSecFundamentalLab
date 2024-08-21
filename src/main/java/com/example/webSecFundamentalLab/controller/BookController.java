@@ -36,6 +36,8 @@ public class BookController {
 
 //        call a service to save the book
 
+            System.out.println("Calling service");
+
             return new ResponseEntity<>(HtmlUtils.htmlEscape("Created > , < , <body></body>, * /  "), HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
